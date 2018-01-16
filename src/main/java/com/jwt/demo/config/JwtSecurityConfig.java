@@ -4,6 +4,7 @@ import com.jwt.demo.security.JwtAuthenticationEntryPoint;
 import com.jwt.demo.security.JwtAuthenticationProvider;
 import com.jwt.demo.security.JwtAuthentificationTokenFilter;
 import com.jwt.demo.security.JwtSuccessHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -23,7 +24,9 @@ import java.util.Collections;
 @Configuration
 public class JwtSecurityConfig extends WebSecurityConfigurerAdapter{
 
+    @Autowired
     private JwtAuthenticationProvider authenticationProvider;
+    @Autowired
     private JwtAuthenticationEntryPoint entryPoint;
 
     @Bean

@@ -5,13 +5,13 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.util.Collection;
 
-public class JwhAuthenticationToken extends UsernamePasswordAuthenticationToken{
+public class JwtAuthenticationToken extends UsernamePasswordAuthenticationToken{
 
 
     private String token;
 
-    public JwhAuthenticationToken(Object principal, Object credentials, String token) {
-        super(null, null);
+    public JwtAuthenticationToken( String token) {
+      super(null, null);
         this.token = token;
     }
 
