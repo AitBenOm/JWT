@@ -8,9 +8,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/token")
 public class TokenController {
 
+    private JwtGeneratorToken jwtGeneratorToken;
+    public TokenController (JwtGeneratorToken jwtGeneratorToken){
+        this.jwtGeneratorToken= jwtGeneratorToken;
+    }
     @PostMapping
     public String getToken(@RequestBody final JwtUser jwtUser){
-    JwtGeneratorToken jwtGeneratorToken = new JwtGeneratorToken();
-   return  jwtGeneratorToken.generateToken(jwtUser);
+return jwtGeneratorToken.generateToken(jwtUser) ;
     }
 }
